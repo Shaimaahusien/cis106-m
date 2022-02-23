@@ -1,5 +1,5 @@
 # What is virtualization
-![q1](q1.pg)
+![q1](q1.png)
 # Types of virtualization
 ![q2](q2.png)
 # anything else you find important
