@@ -80,13 +80,17 @@
                Repository. a large collection of software available for download.
               
            # Include the screenshot of how to update ubuntu with its explanation (page 6)
-           ![f1](f1.png)
-           ![f2](f2.png)
-           ![f3](f3.png)
-           ![f4](f4.png)
-           ![f5](f5.png)
-           ![f6](f6.png)
+           ![]
  
-In your repository create a folder for cheat sheets and place here the installing software cheat sheet, and markdown cheat sheet.
+In your repository create a folder for cheat sheets and place here the installing software
+![q6.1](q6.1.png)
+![q6](q6.2.png)
+![q6](q6.3.png)
+![q6](q6.4.png)
+![q6](q6.5.png)
+![q6](q6.6.png)
+
+
+ cheat sheet, and markdown cheat sheet.
 ![cheats](cheatsheets.png)
 
