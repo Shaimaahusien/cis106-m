@@ -9,10 +9,11 @@ semester: spring 22
  
 # Question 1
 ![q1](q1.1.png)
- 
+ ![q1](q1.2.png)
 # Question 2
-![q2](q2.png)
- 
+![q2](q2.1.png)
+![linux](linux.odt)
+![linux](linux.pdf)
 # Question 3
  
 | Program purpose     | Package Name  | Version         | Description                      |
