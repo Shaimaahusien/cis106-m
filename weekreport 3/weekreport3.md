@@ -1,7 +1,7 @@
 # week report 3 
   
    # Summary of presentations
-   Basic Terminology
+   Basic Terminologygit push
    package archives that contain binaries of software coffi gurtion
    files name and information
    library. reusable code that can be used by more than one function or program.
