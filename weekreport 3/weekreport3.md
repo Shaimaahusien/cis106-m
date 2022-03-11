@@ -6,7 +6,7 @@
    files name and information
    library. reusable code that can be used by more than one function or program.
    Dependency software needed as foundation for other software.
-   Repository. a
+   Repository. 
       Settings
       Search
      Settings at a glance
