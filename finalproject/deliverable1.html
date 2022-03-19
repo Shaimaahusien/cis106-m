@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>deliverable1.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<style>
+/* https://github.com/microsoft/vscode/blob/master/extensions/markdown-language-features/media/markdown.css */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+body {
+	font-family: var(--vscode-markdown-font-family, -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif);
+	font-size: var(--vscode-markdown-font-size, 14px);
+	padding: 0 26px;
+	line-height: var(--vscode-markdown-line-height, 22px);
+	word-wrap: break-word;
+}
+
+#code-csp-warning {
+	position: fixed;
+	top: 0;
+	right: 0;
+	color: white;
+	margin: 16px;
+	text-align: center;
+	font-size: 12px;
+	font-family: sans-serif;
+	background-color:#444444;
+	cursor: pointer;
+	padding: 6px;
+	box-shadow: 1px 1px 1px rgba(0,0,0,.25);
+}
+
+#code-csp-warning:hover {
+	text-decoration: none;
+	background-color:#007acc;
+	box-shadow: 2px 2px 2px rgba(0,0,0,.25);
+}
+
+body.scrollBeyondLastLine {
+	margin-bottom: calc(100vh - 22px);
+}
+
+body.showEditorSelection .code-line {
+	position: relative;
+}
+
+body.showEditorSelection .code-active-line:before,
+body.showEditorSelection .code-line:hover:before {
+	content: "";
+	display: block;
+	position: absolute;
+	top: 0;
+	left: -12px;
+	height: 100%;
+}
+
+body.showEditorSelection li.code-active-line:before,
+body.showEditorSelection li.code-line:hover:before {
+	left: -30px;
+}
+
+.vscode-light.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.15);
+}
+
+.vscode-light.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(0, 0, 0, 0.40);
+}
+
+.vscode-light.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-dark.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.4);
+}
+
+.vscode-dark.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 255, 255, 0.60);
+}
+
+.vscode-dark.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+.vscode-high-contrast.showEditorSelection .code-active-line:before {
+	border-left: 3px solid rgba(255, 160, 0, 0.7);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line:hover:before {
+	border-left: 3px solid rgba(255, 160, 0, 1);
+}
+
+.vscode-high-contrast.showEditorSelection .code-line .code-line:hover:before {
+	border-left: none;
+}
+
+img {
+	max-width: 100%;
+	max-height: 100%;
+}
+
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+select:focus,
+textarea:focus {
+	outline: 1px solid -webkit-focus-ring-color;
+	outline-offset: -1px;
+}
+
+hr {
+	border: 0;
+	height: 2px;
+	border-bottom: 2px solid;
+}
+
+h1 {
+	padding-bottom: 0.3em;
+	line-height: 1.2;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+}
+
+h1, h2, h3 {
+	font-weight: normal;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+table > thead > tr > th {
+	text-align: left;
+	border-bottom: 1px solid;
+}
+
+table > thead > tr > th,
+table > thead > tr > td,
+table > tbody > tr > th,
+table > tbody > tr > td {
+	padding: 5px 10px;
+}
+
+table > tbody > tr + tr > td {
+	border-top: 1px solid;
+}
+
+blockquote {
+	margin: 0 7px 0 5px;
+	padding: 0 16px 0 10px;
+	border-left-width: 5px;
+	border-left-style: solid;
+}
+
+code {
+	font-family: Menlo, Monaco, Consolas, "Droid Sans Mono", "Courier New", monospace, "Droid Sans Fallback";
+	font-size: 1em;
+	line-height: 1.357em;
+}
+
+body.wordWrap pre {
+	white-space: pre-wrap;
+}
+
+pre:not(.hljs),
+pre.hljs code > div {
+	padding: 16px;
+	border-radius: 3px;
+	overflow: auto;
+}
+
+pre code {
+	color: var(--vscode-editor-foreground);
+	tab-size: 4;
+}
+
+/** Theming */
+
+.vscode-light pre {
+	background-color: rgba(220, 220, 220, 0.4);
+}
+
+.vscode-dark pre {
+	background-color: rgba(10, 10, 10, 0.4);
+}
+
+.vscode-high-contrast pre {
+	background-color: rgb(0, 0, 0);
+}
+
+.vscode-high-contrast h1 {
+	border-color: rgb(0, 0, 0);
+}
+
+.vscode-light table > thead > tr > th {
+	border-color: rgba(0, 0, 0, 0.69);
+}
+
+.vscode-dark table > thead > tr > th {
+	border-color: rgba(255, 255, 255, 0.69);
+}
+
+.vscode-light h1,
+.vscode-light hr,
+.vscode-light table > tbody > tr + tr > td {
+	border-color: rgba(0, 0, 0, 0.18);
+}
+
+.vscode-dark h1,
+.vscode-dark hr,
+.vscode-dark table > tbody > tr + tr > td {
+	border-color: rgba(255, 255, 255, 0.18);
+}
+
+</style>
+
+<style>
+/* Tomorrow Theme */
+/* http://jmblog.github.com/color-themes-for-google-code-highlightjs */
+/* Original theme - https://github.com/chriskempson/tomorrow-theme */
+
+/* Tomorrow Comment */
+.hljs-comment,
+.hljs-quote {
+	color: #8e908c;
+}
+
+/* Tomorrow Red */
+.hljs-variable,
+.hljs-template-variable,
+.hljs-tag,
+.hljs-name,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-regexp,
+.hljs-deletion {
+	color: #c82829;
+}
+
+/* Tomorrow Orange */
+.hljs-number,
+.hljs-built_in,
+.hljs-builtin-name,
+.hljs-literal,
+.hljs-type,
+.hljs-params,
+.hljs-meta,
+.hljs-link {
+	color: #f5871f;
+}
+
+/* Tomorrow Yellow */
+.hljs-attribute {
+	color: #eab700;
+}
+
+/* Tomorrow Green */
+.hljs-string,
+.hljs-symbol,
+.hljs-bullet,
+.hljs-addition {
+	color: #718c00;
+}
+
+/* Tomorrow Blue */
+.hljs-title,
+.hljs-section {
+	color: #4271ae;
+}
+
+/* Tomorrow Purple */
+.hljs-keyword,
+.hljs-selector-tag {
+	color: #8959a8;
+}
+
+.hljs {
+	display: block;
+	overflow-x: auto;
+	color: #4d4d4c;
+	padding: 0.5em;
+}
+
+.hljs-emphasis {
+	font-style: italic;
+}
+
+.hljs-strong {
+	font-weight: bold;
+}
+</style>
+
+<style>
+/*
+ * Markdown PDF CSS
+ */
+
+ body {
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe WPC", "Segoe UI", "Ubuntu", "Droid Sans", sans-serif, "Meiryo";
+	padding: 0 12px;
+}
+
+pre {
+	background-color: #f8f8f8;
+	border: 1px solid #cccccc;
+	border-radius: 3px;
+	overflow-x: auto;
+	white-space: pre-wrap;
+	overflow-wrap: break-word;
+}
+
+pre:not(.hljs) {
+	padding: 23px;
+	line-height: 19px;
+}
+
+blockquote {
+	background: rgba(127, 127, 127, 0.1);
+	border-color: rgba(0, 122, 204, 0.5);
+}
+
+.emoji {
+	height: 1.4em;
+}
+
+code {
+	font-size: 14px;
+	line-height: 19px;
+}
+
+/* for inline code */
+:not(pre):not(.hljs) > code {
+	color: #C9AE75; /* Change the old color so it seems less like an error */
+	font-size: inherit;
+}
+
+/* Page Break : use <div class="page"/> to insert page break
+-------------------------------------------------------- */
+.page {
+	page-break-after: always;
+}
+
+</style>
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<h2 id="deliverable-1">Deliverable 1</h2>
+<h2 id="introductionproject-description">Introduction/project description</h2>
+<ul>
+<li>how to install a web Apache web sever on Ubuntu 20.04
+Apache web server is the most extensively used open sources web server supported on the majority
+of the OS including Linux, windows , etc. It is highly customizable and can be integrated with other
+module . Installing and configuring the Apache for basic setup is quite easy .we will need to update
+the system repository index to install the most recent version.</li>
+</ul>
+<h2 id="project-hardware-and-software-requirements">Project hardware and software requirements</h2>
+<p>you should have a regular, non-root user with sudo privileges configured on your server. Additionally, you will need to enable a basic firewall to block non-essential ports. You can learn how to configure a regular user account and set up a firewall for your server</p>
+<h2 id="what-is-linux">What is Linux?</h2>
+<p>Linux is a Unix like Operating System popular in academic and business environments
+Linux consists of a Kernel Libraries ,and utilities that make up the entire operating system
+is also available in many distributions (any operating system that rand the linux kernel)
+popular Linux distributions include Arch,centos ,Debian ,fedora, openSUSE, Red Hat , Slackware , Ubuntu and many more.</p>
+<h2 id="short-history-of-linux">Short history of linux</h2>
+<p>Not to be confused with Linux kernel version history.
+Linux began in 1991 as a personal project by Finnish student Linus Torvalds: to create a new free operating system kernel. The resulting Linux kernel has been marked by constant growth throughout its history. Since the initial release of its source code in 1991, it has grown from a small number of C files under a license prohibiting commercial distribution to the 4.15 version in 2018 with more than 23.3 million lines of source code, not counting comments.
+<img src="q4.1.png" alt="q4.1">
+<img src="q4.2.png" alt="q4.2">
+<img src="q4.3.png" alt="q4.3"></p>
+<h2 id="linux-distribution">Linux distribution</h2>
+<p>there are tow main Linux distributions that branch out most of the other distorts out there</p>
+<ul>
+<li>
+<p>Debian</p>
+</li>
+<li>
+<p>Ubuntu</p>
+</li>
+<li>
+<p>Pop os</p>
+</li>
+<li>
+<p>Redhat</p>
+</li>
+<li>
+<p>Fedora</p>
+</li>
+<li>
+<p>Alma Linux<br>
+<img src="q5.1.png" alt="q5.1">
+<img src="q5.2.png" alt="q5.2">
+<img src="q5.3.png" alt="q5.3">
+<img src="q5.4.png" alt="q5.4">
+<img src="q5.5.png" alt="q5.5"></p>
+</li>
+<li>
+<p>Slackware
+Slackware aims for design stability and simplicity and to be the most &quot;Unix-like&quot; Linux distribution. It makes as few modifications as possible to software package.</p>
+</li>
+<li>
+<p>Debian
+is an all volunteer organization dedicated to developing free software and promoting the ideals of the free
+software Community.**  Fedora **
+contains software distributed under various free and open-source licenses and aims to be on the leading edge of open   source .</p>
+</li>
+</ul>
+<blockquote>
+<p>Debian based  Linux Distributions
+Ubuntu:<br>
+is a Linux distribution freely available with both community and professional support.
+Kali Linux:
+is a Debian-derived Linux distribution designed for digital forensics and penetration testing. It is maintained.
+The standard Debian and its popular off shoot Ubuntu are great, all-around choices for a Linux system, but if you  have more specialized needs, you might want a Debian alternative</p>
+</blockquote>
+<ul>
+<li>red Hat Inter price Linux
+Red Hat Enterprise in Linux provides a concisest foundation environment and thr tools needed to deliver services and workloads faster for any application. it also reduces deployment friction and costs while speeding time to value for crucial workloads enabling development and operations teams to innovator together in any environment.</li>
+</ul>
+<p><img src="q6.1.png" alt="q6"></p>
+<blockquote>
+<p>Fedora:
+contains software distributed under various free and open-source licenses and aims to be on the leading edge of open  source .</p>
+</blockquote>
+<h2 id="open-source-vs-closed-source">Open Source VS Closed Source</h2>
+<p>Open source software refers to the computer software which source is open means the general public can access and use. Closed source software refers to the computer software which source code is closes means public is not given access to the source code</p>
+<h2 id="advantage-of-open-source">advantage of open source</h2>
+<p>Open Source: the software may be distributed for a free or free. the source code is distributed with the software.</p>
+<h2 id="advantage-of-close-source">advantage of close source</h2>
+<p>Close Source: the software is not distributed with source code. the user is restricted from modifying the code.</p>
+<ul>
+<li>The Free software movement<br>
+The freeThe free software movement is a social movement with the goal of obtaining and guaranteeing certain freedoms for software users, namely the freedoms to run the software to study the software to modify the software to modify software and to share copies of software whether modified or not software which meet some requirements of freedoms.</li>
+</ul>
+<p>Freedom 0: use the software for any purpose
+Freedom 1: examine the source code and modify it as you see fit
+Freedom 2: redistributed the Software
+Freedom 3: redistribute your modified software</p>
+<h2 id="sources">Sources</h2>
+<p>class presentation lab 1
+https://www.makeuseof.com/best-debian-based-linux-distros/
+https://www.google.com/search?channel=fs&amp;client=ubuntu&amp;q=open+source+vs+closed+source
+course YouTube channel</p>
+
+</body>
+</html>
