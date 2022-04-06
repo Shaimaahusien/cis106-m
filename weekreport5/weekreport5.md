@@ -1,8 +1,7 @@
 # week report 5
 
 # Definition, usage, and example of the following commands:
-
-## mkdir:
+# mkdir:
 Is used for creating directory or multiple directories.
 
 ### Example:
