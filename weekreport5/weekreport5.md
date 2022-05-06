@@ -1,4 +1,7 @@
 # week report 5
+* Name: Shaimaa Husien 
+* Semester: Sp 2022
+* Class: CIS 106
 
 # Definition, usage, and example of the following commands:
 # mkdir:
